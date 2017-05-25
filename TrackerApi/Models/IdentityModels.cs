@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace TrackerApi.Models
 {
@@ -20,6 +21,10 @@ namespace TrackerApi.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        //public virtual DbSet<AppUser> AppUsers { get; set; }
+        public virtual DbSet<Parent> Parents{ get; set; }
+        public virtual DbSet<Child> Childs { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
