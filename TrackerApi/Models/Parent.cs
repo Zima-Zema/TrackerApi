@@ -17,6 +17,8 @@ namespace TrackerApi.Models
         public string Lname { get; set; }
 
         public virtual List<Child> Childs { get; set; }
+        
+
 
     }
 }

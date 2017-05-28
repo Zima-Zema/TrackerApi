@@ -17,5 +17,10 @@ namespace TrackerApi.Models
         public Parent parent { get; set; }
 
 
+        public virtual List<LocationHistory> LocHistorys { get; set; }
+        public virtual List<LocationSchadual> Schaduals { get; set; }
+
+
+
     }
 }

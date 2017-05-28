@@ -14,6 +14,7 @@ namespace TrackerApi.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Lname = c.String(nullable: false),
                         Parent_Id = c.Int(nullable: false),
+                        Location_Id = c.Int(nullable: false),
                         Fname = c.String(nullable: false),
                         Email = c.String(nullable: false),
                         Password = c.String(),
@@ -25,8 +26,38 @@ namespace TrackerApi.Migrations
                         UserRole = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Locations", t => t.Location_Id, cascadeDelete: true)
                 .ForeignKey("dbo.Parents", t => t.Parent_Id, cascadeDelete: true)
-                .Index(t => t.Parent_Id);
+                .Index(t => t.Parent_Id)
+                .Index(t => t.Location_Id);
+            
+            CreateTable(
+                "dbo.Locations",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Log = c.Int(nullable: false),
+                        Lat = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.LocationHistories",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Date = c.DateTime(nullable: false),
+                        From = c.DateTime(nullable: false),
+                        To = c.DateTime(nullable: false),
+                        Log = c.Int(nullable: false),
+                        Lat = c.Int(nullable: false),
+                        Child_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Children", t => t.Child_Id, cascadeDelete: true)
+                .Index(t => t.Child_Id);
             
             CreateTable(
                 "dbo.Parents",
@@ -74,7 +105,9 @@ namespace TrackerApi.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        Email = c.String(maxLength: 256),
+                        Email = c.String(nullable: false, maxLength: 256),
+                        Password = c.String(),
+                        ImageUrl = c.String(),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
                         SecurityStamp = c.String(),
@@ -87,6 +120,7 @@ namespace TrackerApi.Migrations
                         UserName = c.String(nullable: false, maxLength: 256),
                     })
                 .PrimaryKey(t => t.Id)
+                .Index(t => t.Email, unique: true)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex");
             
             CreateTable(
@@ -123,12 +157,17 @@ namespace TrackerApi.Migrations
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.Children", "Parent_Id", "dbo.Parents");
+            DropForeignKey("dbo.LocationHistories", "Child_Id", "dbo.Children");
+            DropForeignKey("dbo.Children", "Location_Id", "dbo.Locations");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
+            DropIndex("dbo.AspNetUsers", new[] { "Email" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.LocationHistories", new[] { "Child_Id" });
+            DropIndex("dbo.Children", new[] { "Location_Id" });
             DropIndex("dbo.Children", new[] { "Parent_Id" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
@@ -136,6 +175,8 @@ namespace TrackerApi.Migrations
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.Parents");
+            DropTable("dbo.LocationHistories");
+            DropTable("dbo.Locations");
             DropTable("dbo.Children");
         }
     }
