@@ -12,6 +12,13 @@ namespace TrackerApi
     {
         public static void Register(HttpConfiguration config)
         {
+
+            var setting = config.Formatters.JsonFormatter.SerializerSettings;
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            setting.Formatting = Newtonsoft.Json.Formatting.Indented;
+
+
+            config.EnableCors();
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();

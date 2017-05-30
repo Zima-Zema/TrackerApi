@@ -18,6 +18,8 @@ namespace TrackerApi.Models
         [Required]
         public int Lat { get; set; }
 
+        public bool viewFlag { get; set; }
+
         public virtual List<LocationSchadual> Schaduals { get; set; }
 
     }
