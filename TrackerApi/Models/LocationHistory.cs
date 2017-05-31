@@ -21,9 +21,9 @@ namespace TrackerApi.Models
         public DateTime From { get; set; }
         public DateTime To { get; set; }
         [Required]
-        public int Log { get; set; }
+        public double Log { get; set; }
         [Required]
-        public int Lat { get; set; }
+        public double Lat { get; set; }
 
         [ForeignKey("Child")]
         public int Child_Id { get; set; }

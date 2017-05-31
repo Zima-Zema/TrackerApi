@@ -37,7 +37,10 @@ namespace TrackerApi.Models
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<LocationHistory> Historis { get; set; }
         public virtual DbSet<LocationSchadual> Schaduals { get; set; }
-        
+
+        public virtual DbSet<SpeedNotify> SpeedNotifys { get; set; }
+        public virtual DbSet<DangerNotify> DangerNotifys { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

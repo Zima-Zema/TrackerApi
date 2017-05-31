@@ -262,18 +262,25 @@
     <Compile Include="Migrations\201705301113452_AddViewFlag.Designer.cs">
       <DependentUpon>201705301113452_AddViewFlag.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705310804010_AddNotification.cs" />
+    <Compile Include="Migrations\201705310804010_AddNotification.Designer.cs">
+      <DependentUpon>201705310804010_AddNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Child.cs" />
+    <Compile Include="Models\DangerNotify.cs" />
     <Compile Include="Models\FullAddress.cs" />
     <Compile Include="Models\LocationSchadual.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\LocationHistory.cs" />
+    <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\Parent.cs" />
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\RoleName.cs" />
+    <Compile Include="Models\SpeedNotify.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -357,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705301113452_AddViewFlag.resx">
       <DependentUpon>201705301113452_AddViewFlag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705310804010_AddNotification.resx">
+      <DependentUpon>201705310804010_AddNotification.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

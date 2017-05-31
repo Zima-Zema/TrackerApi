@@ -15,7 +15,7 @@ namespace TrackerApi.Models
         [ForeignKey("parent")]
         public int Parent_Id { get; set; }
         public Parent parent { get; set; }
-
+        public bool viewFlag { get; set; }
 
         public virtual List<LocationHistory> LocHistorys { get; set; }
         public virtual List<LocationSchadual> Schaduals { get; set; }
