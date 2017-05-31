@@ -24,6 +24,7 @@ namespace TrackerApi.Models
         public double Log { get; set; }
         [Required]
         public double Lat { get; set; }
+        public bool viewFlag { get; set; }
 
         [ForeignKey("Child")]
         public int Child_Id { get; set; }
