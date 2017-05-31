@@ -17,7 +17,7 @@ namespace TrackerApi
             setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
             setting.Formatting = Newtonsoft.Json.Formatting.Indented;
 
-
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.EnableCors();
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.

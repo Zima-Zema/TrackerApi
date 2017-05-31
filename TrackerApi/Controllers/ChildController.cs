@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using TrackerApi.Models;
+
 
 namespace TrackerApi.Controllers
 {
@@ -18,13 +20,12 @@ namespace TrackerApi.Controllers
         // //GET /api/childs
         public IHttpActionResult GetAll()
         {
-            return Ok(_context.Childs.Where(lo => lo.viewFlag == true).Select(ll => ll).ToList());
-
+            return Ok(_context.Childs.Where(lo => lo.viewFlag == true).Select(ll => ll).Include(li => li.parent).ToList());
         }
 
 
         //GET /api/childs/1
-        public IHttpActionResult GetParent(int id)
+        public IHttpActionResult GetChild(int id)
         {
             var child = _context.Childs.SingleOrDefault(c => c.Id == id);
             if (child == null)
@@ -93,5 +94,5 @@ namespace TrackerApi.Controllers
             return Ok();
         }
     }
-    }
+}
 
