@@ -13,6 +13,7 @@ namespace TrackerApi.Models
         public float Value { get; set; }
 
         public DateTime Date { get; set; }
+        public bool viewFlag { get; set; }
 
     }
 }

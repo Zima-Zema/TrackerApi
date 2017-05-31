@@ -12,6 +12,7 @@ namespace TrackerApi.Models
 
         public DateTime Date { get; set; }
         public string Desc { get; set; }
+        public bool viewFlag { get; set; }
 
     }
 }
