@@ -22,8 +22,8 @@ namespace TrackerApi.Controllers
         }
 
 
-        //GET /api/parents/1
-        public IHttpActionResult GetParent(int id)
+        //GET /api/parent/1
+        public IHttpActionResult GetParent(int? id)
         {
             var parent = _context.Parents.SingleOrDefault(p => p.Id == id);
             if (parent == null)
