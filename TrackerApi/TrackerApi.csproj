@@ -251,6 +251,7 @@
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\SchadualController.cs" />
     <Compile Include="Controllers\SpeedController.cs" />
+    <Compile Include="Controllers\testController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
