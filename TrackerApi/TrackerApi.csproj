@@ -244,6 +244,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChildController.cs" />
     <Compile Include="Controllers\DangerController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HistoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ParentController.cs" />
