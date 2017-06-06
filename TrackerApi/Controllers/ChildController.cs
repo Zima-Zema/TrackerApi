@@ -17,7 +17,7 @@ namespace TrackerApi.Controllers
 
         ApplicationDbContext _context = new ApplicationDbContext();
 
-        // //GET /api/childs
+        // //GET /api/child
         public IHttpActionResult GetAll()
         {
             return Ok(_context.Childs.Where(lo => lo.viewFlag == true).Select(ll => ll).Include(li => li.parent).ToList());
