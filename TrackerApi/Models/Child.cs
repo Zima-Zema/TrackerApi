@@ -13,7 +13,7 @@ namespace TrackerApi.Models
         public string Lname { get; set; }
 
         [ForeignKey("parent")]
-        public int Parent_Id { get; set; }
+        public int? Parent_Id { get; set; }
         public Parent parent { get; set; }
         public bool viewFlag { get; set; }
 

@@ -282,6 +282,10 @@
     <Compile Include="Migrations\201705311303351_AddviewFlagspeed_schudule.Designer.cs">
       <DependentUpon>201705311303351_AddviewFlagspeed_schudule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706061010059_addNullToParentId.cs" />
+    <Compile Include="Migrations\201706061010059_addNullToParentId.Designer.cs">
+      <DependentUpon>201706061010059_addNullToParentId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -392,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705311303351_AddviewFlagspeed_schudule.resx">
       <DependentUpon>201705311303351_AddviewFlagspeed_schudule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061010059_addNullToParentId.resx">
+      <DependentUpon>201706061010059_addNullToParentId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

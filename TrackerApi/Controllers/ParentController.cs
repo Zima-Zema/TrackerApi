@@ -22,8 +22,8 @@ namespace TrackerApi.Controllers
         }
 
 
-        //GET /api/parents/1
-        public IHttpActionResult GetParent(int id)
+        //GET /api/parent/1
+        public IHttpActionResult GetParent(int? id)
         {
             var parent = _context.Parents.SingleOrDefault(p => p.Id == id);
             if (parent == null)
@@ -91,7 +91,17 @@ namespace TrackerApi.Controllers
             _context.SaveChanges();
             return Ok();
         }
-      
+       
+        //public IHttpActionResult GetChildren(int Parentid)
+        //{
+        //    var Children = _context.Childs.Where(c => c.Id == Parentid).ToList();
+        //    if (Children == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(Children);
+        //}
+
 
     }
-}
+    }
