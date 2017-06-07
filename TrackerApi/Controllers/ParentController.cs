@@ -91,17 +91,17 @@ namespace TrackerApi.Controllers
             _context.SaveChanges();
             return Ok();
         }
-        [HttpGet]
-        public IHttpActionResult GetChildren(int Parentid)
-        {
-            var Children = _context.Childs.Where(c => c.Id == Parentid).ToList();
-            if (Children == null)
-            {
-                return NotFound();
-            }
-            return Ok(Children);
-        }
+       
+        //public IHttpActionResult GetChildren(int Parentid)
+        //{
+        //    var Children = _context.Childs.Where(c => c.Id == Parentid).ToList();
+        //    if (Children == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(Children);
+        //}
 
 
     }
-}
+    }
