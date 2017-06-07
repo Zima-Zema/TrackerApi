@@ -33,6 +33,7 @@ namespace TrackerApi.Models
         public bool isWed { get; set; }
         public bool isThe { get; set; }
         public bool isFri { get; set; }
+        public bool viewFlag { get; set; }
 
         public bool isRepeated { get; set; }
     }
