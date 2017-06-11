@@ -8,7 +8,6 @@ namespace TrackerApi.Models
 {
     public class Parent: AppUser
     {
-
         public Parent()
         {
             Childs = new List<Child>();
@@ -16,11 +15,6 @@ namespace TrackerApi.Models
         [Required]
         public string Lname { get; set; }
         public bool viewFlag { get; set; }
-
-
         public virtual List<Child> Childs { get; set; }
-        
-
-
     }
 }

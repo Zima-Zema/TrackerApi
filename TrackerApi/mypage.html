@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/jquery-2.2.4.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.2.js"></script>
+    <script src="signalr/hubs"></script>
+    <script>
+        $(function () {
+            id = prompt("please enter your id");
+            con = $.connection.passLoc;
+            $.connection.hub.start();
+            con.client.newloc = function (la, lo , key) {
+                console.log("client");
+                $("ul").append("<li>" + lo + " : " + la + ":" + key + "</li>")
+            }
+        });//load function
+        function send() {
+            console.log("server");
+            con.server.getlocation($("#txt_log").val(),$("#txt_lat").val(), id);
+          //con.server.getlocation(lat,log, id);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt_lat" />
+    <input type="text" id="txt_log" />
+    <input type="button" value="send" onclick="send()" />
+    <ul>
+
+    </ul>
+</body>
+</html>
