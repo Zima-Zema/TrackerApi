@@ -9,7 +9,7 @@ using TrackerApi.Models;
 
 namespace TrackerApi.Controllers
 {
-    //[EnableCors(origins: "http://http://localhost:28529/", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://localhost:28529/", headers: "*", methods: "*")]
     public class ParentController : ApiController
     {
         ApplicationDbContext _context = new ApplicationDbContext();
@@ -37,6 +37,8 @@ namespace TrackerApi.Controllers
         [System.Web.Http.HttpPost]
         public IHttpActionResult CreateParent([FromBody]Parent p)
         {
+            p.viewFlag = true;
+            p.UserRole = Role.Parent;
             if (!ModelState.IsValid)
             {
                 return BadRequest();
@@ -45,7 +47,7 @@ namespace TrackerApi.Controllers
             {
                 return NotFound();
             }
-            p.viewFlag = true;
+          
             _context.Parents.Add(p);
             _context.SaveChanges();
 
