@@ -11,7 +11,7 @@ using TrackerApi.Models;
 
 namespace TrackerApi.Controllers
 {
-    [EnableCors(origins: "http://http://localhost:28529/", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://localhost:28529", headers: "*", methods: "*")]
     public class ChildController : ApiController
     {
 
@@ -22,10 +22,10 @@ namespace TrackerApi.Controllers
         {
             return Ok(_context.Childs.Where(lo => lo.viewFlag == true).Select(ll => ll).Include(li => li.parent).ToList());
         }
-
+    
 
         //GET /api/childs/1
-        public IHttpActionResult GetChild(int id)
+        public IHttpActionResult GetChild(int? id)
         {
             var child = _context.Childs.SingleOrDefault(c => c.Id == id);
             if (child == null)
@@ -93,6 +93,16 @@ namespace TrackerApi.Controllers
             _context.SaveChanges();
             return Ok();
         }
+        //public IHttpActionResult GetChildLocations(int id)
+        //{
+        //    var child = _context.Childs.SingleOrDefault(c => c.Id == id);
+        //    if (child == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(child);
+        //}
+
     }
 }
 
