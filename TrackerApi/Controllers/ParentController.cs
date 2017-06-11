@@ -37,6 +37,8 @@ namespace TrackerApi.Controllers
         [System.Web.Http.HttpPost]
         public IHttpActionResult CreateParent([FromBody]Parent p)
         {
+            p.viewFlag = true;
+            p.UserRole = Role.Parent;
             if (!ModelState.IsValid)
             {
                 return BadRequest();
@@ -45,7 +47,7 @@ namespace TrackerApi.Controllers
             {
                 return NotFound();
             }
-            p.viewFlag = true;
+          
             _context.Parents.Add(p);
             _context.SaveChanges();
 
