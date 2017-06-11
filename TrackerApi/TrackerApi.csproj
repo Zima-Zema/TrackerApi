@@ -256,7 +256,6 @@
     <Compile Include="Controllers\DangerController.cs" />
     <Compile Include="Controllers\HistoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ParentController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\SchadualController.cs" />
