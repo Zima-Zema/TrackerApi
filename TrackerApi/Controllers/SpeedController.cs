@@ -9,7 +9,7 @@ using TrackerApi.Models;
 
 namespace TrackerApi.Controllers
 {
-    [EnableCors(origins: "http://http://localhost:28529/", headers: "*", methods: "*")]
+ 
     public class SpeedController : ApiController
     {
         private ApplicationDbContext _context;

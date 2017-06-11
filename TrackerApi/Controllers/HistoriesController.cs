@@ -10,7 +10,7 @@ using TrackerApi.Models;
 
 namespace TrackerApi.Controllers
 {
-    [EnableCors(origins: "http://http://localhost:28529/", headers: "*", methods: "*")]
+    
     public class HistoriesController : ApiController
     {
         private ApplicationDbContext _context;

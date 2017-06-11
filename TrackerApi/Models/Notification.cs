@@ -13,7 +13,6 @@ namespace TrackerApi.Models
         public int Id { get; set; }
         [ForeignKey("Child")]
         public int Child_key { get; set; }
-
         public Child Child { get; set; }
 
     }

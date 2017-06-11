@@ -31,7 +31,5 @@ namespace TrackerApi.Models
         public string Telephone { get; set; }
         public FullAddress Address { get; set; }
         public Role UserRole { get; set; }
-
-
     }
 }
