@@ -11,7 +11,7 @@ using System.Web.Http.Cors;
 
 namespace TrackerApi.Controllers
 {
-    [EnableCors(origins: "http://localhost:28529/", headers: "*", methods: "*")]
+    
     public class LocationsController : ApiController
     {
         private ApplicationDbContext _context;
