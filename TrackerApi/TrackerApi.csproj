@@ -306,10 +306,27 @@
     <Compile Include="Migrations\201706061010059_addNullToParentId.Designer.cs">
       <DependentUpon>201706061010059_addNullToParentId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706131217058_add_connections_ids.cs" />
+    <Compile Include="Migrations\201706131217058_add_connections_ids.Designer.cs">
+      <DependentUpon>201706131217058_add_connections_ids.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706131236387_fix_error.cs" />
+    <Compile Include="Migrations\201706131236387_fix_error.Designer.cs">
+      <DependentUpon>201706131236387_fix_error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706131246135_edit-connection2.cs" />
+    <Compile Include="Migrations\201706131246135_edit-connection2.Designer.cs">
+      <DependentUpon>201706131246135_edit-connection2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706131954562_edit-conn_id.cs" />
+    <Compile Include="Migrations\201706131954562_edit-conn_id.Designer.cs">
+      <DependentUpon>201706131954562_edit-conn_id.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Child.cs" />
+    <Compile Include="Models\Connection_id.cs" />
     <Compile Include="Models\DangerNotify.cs" />
     <Compile Include="Models\FullAddress.cs" />
     <Compile Include="Models\LocationSchadual.cs" />
@@ -433,6 +450,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706061010059_addNullToParentId.resx">
       <DependentUpon>201706061010059_addNullToParentId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706131217058_add_connections_ids.resx">
+      <DependentUpon>201706131217058_add_connections_ids.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706131236387_fix_error.resx">
+      <DependentUpon>201706131236387_fix_error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706131246135_edit-connection2.resx">
+      <DependentUpon>201706131246135_edit-connection2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706131954562_edit-conn_id.resx">
+      <DependentUpon>201706131954562_edit-conn_id.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

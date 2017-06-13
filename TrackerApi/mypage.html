@@ -11,19 +11,24 @@
             C_id = prompt("please enter your child id");
             P_id = prompt("please enter your parent id");
             con = $.connection.passLoc;
-            $.connection.hub.start();
+            $.connection.hub.qs = "ChId=" + C_id+"&PrntId="+P_id;
+            $.connection.hub.start();       
             con.client.newloc = function (la, lo , key) {
                 console.log("client");
                 $("ul").append("<li>" + lo + " : " + la + " < for your child > " + key + "</li>")
             }
+            //
             con.client.recievemsg = function (c) {
                 $("ul").append("<li>" + c +"</li>")
+            }
+            //
+            con.client.recievemsg_dis = function (dis) {
+                $("ul").append("<li>" + dis + "</li>")
             }
         });//load function
         function send() {
             console.log("server");
             con.server.getlocation($("#txt_log").val(), $("#txt_lat").val(), C_id, P_id);
-          //con.server.getlocation(lat,log, id);
         }
     </script>
 </head>
