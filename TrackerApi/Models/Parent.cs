@@ -11,10 +11,12 @@ namespace TrackerApi.Models
         public Parent()
         {
             Childs = new List<Child>();
+            Locations = new List<Location>();
         }
         [Required]
         public string Lname { get; set; }
         public bool viewFlag { get; set; }
         public virtual List<Child> Childs { get; set; }
+        public virtual List<Location> Locations { get; set; }
     }
 }

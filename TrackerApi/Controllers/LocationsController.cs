@@ -68,7 +68,7 @@ namespace TrackerApi.Controllers
             }
             dbLocation.Name = location.Name;
             dbLocation.Lat = location.Lat;
-            dbLocation.Log = location.Log;
+            dbLocation.Lng = location.Lng;
             _context.SaveChanges();
             return Ok();
         }

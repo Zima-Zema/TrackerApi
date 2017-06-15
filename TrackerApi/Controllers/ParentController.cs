@@ -20,9 +20,9 @@ namespace TrackerApi.Controllers
             return Ok(_context.Parents.Where(lo => lo.viewFlag == true).Select(ll => ll).ToList());
 
         }
-
-
+        
         //GET /api/parent/1
+        [HttpGet]
         public IHttpActionResult GetParent(int? id)
         {
             var parent = _context.Parents.SingleOrDefault(p => p.Id == id);
@@ -32,7 +32,17 @@ namespace TrackerApi.Controllers
             }
             return Ok(parent);
         }
-
+        [HttpPost]
+        [Route("~/api/parent/GetByEmail")]
+        public IHttpActionResult GetByEmail([FromBody]string email)
+        {
+            var parent = _context.Parents.SingleOrDefault(p => p.Email.ToLower() == email.ToLower());
+            if (parent==null)
+            {
+                return NotFound();
+            }
+            return Ok(parent);
+        }
         //Create Parent
         [System.Web.Http.HttpPost]
         public IHttpActionResult CreateParent([FromBody]Parent p)
@@ -55,7 +65,7 @@ namespace TrackerApi.Controllers
           
 
         }
-
+    
         //Edit
         [System.Web.Http.HttpPut]
         public IHttpActionResult UpdateParent([FromUri] int id, [FromBody] Parent p)

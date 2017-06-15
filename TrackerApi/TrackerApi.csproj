@@ -306,6 +306,14 @@
     <Compile Include="Migrations\201706061010059_addNullToParentId.Designer.cs">
       <DependentUpon>201706061010059_addNullToParentId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706111833223_addRelationParentLocations.cs" />
+    <Compile Include="Migrations\201706111833223_addRelationParentLocations.Designer.cs">
+      <DependentUpon>201706111833223_addRelationParentLocations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706111905334_FixLocationsLng.cs" />
+    <Compile Include="Migrations\201706111905334_FixLocationsLng.Designer.cs">
+      <DependentUpon>201706111905334_FixLocationsLng.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -431,6 +439,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706061010059_addNullToParentId.resx">
       <DependentUpon>201706061010059_addNullToParentId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706111833223_addRelationParentLocations.resx">
+      <DependentUpon>201706111833223_addRelationParentLocations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706111905334_FixLocationsLng.resx">
+      <DependentUpon>201706111905334_FixLocationsLng.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

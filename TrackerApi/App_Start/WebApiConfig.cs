@@ -32,6 +32,10 @@ namespace TrackerApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            //config.Routes.MapHttpRoute(
+            //    name: "DefaultApiWithAction",
+            //    routeTemplate: "api/{controller}/{action}/{email:alpha}",
+            //    defaults: new { email = RouteParameter.Optional });
         }
     }
 }
