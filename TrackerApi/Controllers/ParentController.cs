@@ -88,7 +88,7 @@ namespace TrackerApi.Controllers
             Parent.Address = p.Address;
             Parent.UserRole = p.UserRole;
             _context.SaveChanges();
-            return Ok();
+            return Ok(Parent);
         }
 
         [System.Web.Http.HttpDelete]

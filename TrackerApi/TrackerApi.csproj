@@ -322,6 +322,10 @@
     <Compile Include="Migrations\201706131954562_edit-conn_id.Designer.cs">
       <DependentUpon>201706131954562_edit-conn_id.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706151154302_FixHosting.cs" />
+    <Compile Include="Migrations\201706151154302_FixHosting.Designer.cs">
+      <DependentUpon>201706151154302_FixHosting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -383,6 +387,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\trackapi - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\trackapi - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="mypage.html" />
     <Content Include="Scripts\bootstrap.js" />
@@ -462,6 +468,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706131954562_edit-conn_id.resx">
       <DependentUpon>201706131954562_edit-conn_id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706151154302_FixHosting.resx">
+      <DependentUpon>201706151154302_FixHosting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
