@@ -6,6 +6,8 @@ using Owin;
 using TrackerApi.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.SignalR;
+using TrackerApi.service;
 
 [assembly: OwinStartup(typeof(TrackerApi.Startup))]
 
@@ -15,6 +17,12 @@ namespace TrackerApi
     {
         public void Configuration(IAppBuilder app)
         {
+
+          //  GlobalHost.DependencyResolver.Register(typeof(IUserIdProvider),() => new PrincipalUserIdProvider());
+            //
+            //var idProvider = new GetUserIdProvider();
+            // GlobalHost.DependencyResolver.Register(typeof(IUserIdProvider), () => idProvider);
+
             app.MapSignalR();
             ConfigureAuth(app);
             createRolesandUsers();

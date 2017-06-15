@@ -40,6 +40,7 @@ namespace TrackerApi.Models
 
         public virtual DbSet<SpeedNotify> SpeedNotifys { get; set; }
         public virtual DbSet<DangerNotify> DangerNotifys { get; set; }
+        public virtual DbSet<Connection_id> Connection_ids { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
