@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNet.SignalR;
 using TrackerApi.Models;
+using System.Data.Entity;
 
 namespace TrackerApi.service
 {
@@ -62,10 +63,17 @@ namespace TrackerApi.service
             Parent Parent = db.Parents.Single(ch => ch.Id.ToString() == ChId);
             //
             Connection_id conn_id = new Connection_id() { Con_key = Context.ConnectionId, Parent_Id = int.Parse(PrntId), parent = Parent };
-            User_con.ConnectedIds.Remove(conn_id);
+            var entry = db.Entry(conn_id);
+            if (entry.State == EntityState.Detached)
+                db.Connection_ids.Attach(conn_id);
             db.Connection_ids.Remove(conn_id);
             db.SaveChanges();
             return base.OnDisconnected(stopCalled);
+
+
+
+            
+            
         }
     }
 }
