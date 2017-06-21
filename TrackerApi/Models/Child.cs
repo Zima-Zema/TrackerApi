@@ -9,6 +9,11 @@ namespace TrackerApi.Models
 {
     public class Child:AppUser
     {
+        public Child()
+        {
+            LocHistorys = new List<LocationHistory>();
+            Schaduals = new List<LocationSchadual>();
+        }
         [Required]
         public string Lname { get; set; }
 

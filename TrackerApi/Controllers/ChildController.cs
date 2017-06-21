@@ -35,6 +35,14 @@ namespace TrackerApi.Controllers
             return Ok(child);
         }
 
+        [HttpPost]
+        [Route("~/api/Child/GetByEmail")]
+        public IHttpActionResult GetByEmail([FromBody]string email)
+        {
+            var parent = _context.Childs.FirstOrDefault(p => p.Email.ToLower() == email.ToLower());
+            return Ok(parent);
+        }
+
         //Create child
         [System.Web.Http.HttpPost]
         public IHttpActionResult CreateChild([FromBody]Child c)
@@ -78,7 +86,7 @@ namespace TrackerApi.Controllers
             child.Address = c.Address;
             child.UserRole = c.UserRole;
             _context.SaveChanges();
-            return Ok();
+            return Ok(child);
         }
 
         [System.Web.Http.HttpDelete]

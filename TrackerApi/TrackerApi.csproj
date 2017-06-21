@@ -326,17 +326,27 @@
     <Compile Include="Migrations\201706151154302_FixHosting.Designer.cs">
       <DependentUpon>201706151154302_FixHosting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706172133117_Removehistory.cs" />
+    <Compile Include="Migrations\201706172133117_Removehistory.Designer.cs">
+      <DependentUpon>201706172133117_Removehistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706172135324_Addhistory.cs" />
+    <Compile Include="Migrations\201706172135324_Addhistory.Designer.cs">
+      <DependentUpon>201706172135324_Addhistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Child.cs" />
     <Compile Include="Models\Connection_id.cs" />
+    <Compile Include="Models\Coordinates.cs" />
     <Compile Include="Models\DangerNotify.cs" />
     <Compile Include="Models\FullAddress.cs" />
+    <Compile Include="Models\LocationHistory.cs" />
     <Compile Include="Models\LocationSchadual.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\LocationHistory.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\Parent.cs" />
     <Compile Include="Models\AppUser.cs" />
@@ -471,6 +481,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706151154302_FixHosting.resx">
       <DependentUpon>201706151154302_FixHosting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706172133117_Removehistory.resx">
+      <DependentUpon>201706172133117_Removehistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706172135324_Addhistory.resx">
+      <DependentUpon>201706172135324_Addhistory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

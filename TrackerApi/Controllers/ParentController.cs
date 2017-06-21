@@ -36,13 +36,14 @@ namespace TrackerApi.Controllers
         [Route("~/api/parent/GetByEmail")]
         public IHttpActionResult GetByEmail([FromBody]string email)
         {
-            var parent = _context.Parents.SingleOrDefault(p => p.Email.ToLower() == email.ToLower());
-            if (parent==null)
-            {
-                return NotFound();
-            }
+            var parent = _context.Parents.FirstOrDefault(p => p.Email.ToLower() == email.ToLower());
+            //if (parent==null)
+            //{
+            //    return NotFound();
+            //}
             return Ok(parent);
         }
+
         //Create Parent
         [System.Web.Http.HttpPost]
         public IHttpActionResult CreateParent([FromBody]Parent p)
